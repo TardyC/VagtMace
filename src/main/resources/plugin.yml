@@ -1,0 +1,24 @@
+name: VagtSystem
+main: dev.crnyy.vagtsystem.Main
+version: 1.0.0
+author: crnyy
+description: MaceMC
+commands:
+  vagtchat:
+    description: Slår din vagtchat til og fra
+    aliases:
+      - vc
+      - vagtc
+      - vchat
+  vagtlevel:
+    description: Åbner din vagtlevel menu
+    aliases:
+      - vagtl
+      - vlevel
+      - vl
+  irons:
+  spassermine:
+  vagt:
+  vagtcoins:
+    description: Skriver hvor mange coins du har
+  ontime:

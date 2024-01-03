@@ -1,0 +1,89 @@
+Vagtshop:
+  buyed-item: "&eDu har købt {0} for {1}"
+  no-penge: "&eDu har ikke nok penge til dette."
+  enchant-item: "&eDu har enchantet {0}: {1}"
+
+vagtpay:
+  payout: "Du har modtaget {pay} i vagt løn"
+  payupgrade: "Du har opgradet din vagt løn til {pay}"
+
+vagtsign:
+  heal-sign-chat: "Du er blevet healet"
+  heal-sign-screen: "Du er blevet healet"
+  buffs: "Du har modtaget dine buffs"
+  buffs-screen: "Du har modtaget dine buffs"
+
+healsign:
+  text:
+    1st: "Tryk her"
+    2nd: "For at modtage"
+    3nd: "dine buffs"
+    4nd: "MaceMc"
+  signtext: #Her skal du kun skrive den første linje så laver den resten selv.
+    text: "Heal"
+
+buffsign:
+  text:
+    1st: "Tryk her"
+    2nd: "For at modtage"
+    3nd: "dine buffs"
+    4nd: "MaceMc"
+  signtext: #Her skal du kun skrive den første linje så laver den resten selv.
+    text: "Buffs"
+
+shopsign:
+  text:
+    1st: "Tryk her"
+    2nd: "For at se"
+    3nd: "shoppen"
+    4nd: "MaceMc"
+  signtext: #Her skal du kun skrive den første linje så laver den resten selv.
+    text: "Shop"
+
+
+enchantsign:
+  text:
+    1st: "Tryk her"
+    2nd: "For at se"
+    3nd: ""
+    4nd: "Enchant"
+  signtext: #Her skal du kun skrive den første linje så laver den resten selv.
+    text: "enchant"
+
+vagtwarpsign:
+ text:
+   1st: "Tryk her"
+   2nd: "for at se"
+   3nd: ""
+   4nd: "&4&lVAGTWARPS"
+ signtext: #Her skal du kun skrive den første linje så laver den resten selv.
+   text: "VagtWarps"
+
+
+repair:
+  repair-text: "Du har repaired dit item for (x)"
+
+
+vagtlevel:
+  rankup: "Du er kommet i ny level (#Level)"
+  norequired: "Du har ikke nok til at komme i vagt level op"
+
+vagtmine:
+  setinmine: "Du er blevet sat i minen"
+  getoutofmine: "Du har minet dig fri"
+  buyed-out-ofmine: "Du er blevet købt ud af minen"
+  takeoutofmine: "Du er blevet taget ud af minen af en staff"
+  buyedinmine: "Du er blevet købt ind i minen af BattlePass Coins"
+  setlocation: "Du har sat lokationen for minen"
+  setspawnlocation: "Du har sat spawn locationen"
+
+vagtwarp:
+  warped-to: "Du har warpet til (x)"
+
+
+vagtshopitems:
+  buyed-warp: "Du har købt et nyt vagt warp (Warped)"
+  buyed-bonus: "Du har tilføjet 1% bonus"
+  buyed-rareloot: "Du har opgradet din chance for mere rareloot i "
+  buyed-pv: "Du har købt x antal pv."
+

@@ -1,0 +1,85 @@
+Worlds:
+  C: world #Skriv din verden for C her
+  B: B #Skriv din verden for B her
+  A: A #Skriv din verden for A her
+
+
+Spassermine:
+  Antal-start-blocks: 500
+  Lidt-spiller:
+  Mange-spiller:
+  Dør-om-natten:
+  Død-under-2timer:
+  AA-Bonus:
+  A-Bonus:
+  B-Bonus:
+  C-Bonus:
+  Købt-i-blocks:
+
+Pay:
+  Start-pay: 5000
+
+Repair:
+  Repair-price: 2000
+
+#Prisen på Enchant i menuen
+VagtEnchant:
+  C: #Prisen for C
+    protection-1: 1500
+    protection-2: 3000
+    protection-3: 4500
+    protection-4: 6000
+  B: #Prisen for B
+    protection-1: 3000
+    protection-2: 4500
+    protection-3: 6000
+    protection-4: 8000
+  A: #Prisen for A
+    protection-1: 3500
+    protection-2: 6000
+    protection-3: 10000
+    protection-4: 10000
+
+#Prisen på shop menuen hvor man køber itemet
+Vagtshop:
+  C: #Pris for C
+    helmet: 2000
+    chestplate: 2000
+    legs: 2000
+    boots: 2000
+  B: #Pris for B
+    helmet: 2000
+    chestplate: 2000
+    legs: 2000
+    boots: 2000
+  A: #Pris for A
+    helmet: 2000
+    chestplate: 2000
+    legs: 2000
+    boots: 2000
+
+
+
+Vagtbuffs:
+  C:
+    Speed: 2
+    Absorption: 6
+    Strength: 1
+  B:
+    Speed: 2
+    Absorption: 7
+    Strength: 1
+  A:
+    Speed: 2
+    Absorption: 10
+    Strength: 1
+
+
+
+
+
+#Vagtkiste disse items indholder
+Vagtkiste:
+  ITEMS:
+    DIRT: 0.5
+    IRON_PICKAXE: 2
