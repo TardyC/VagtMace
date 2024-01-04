@@ -16,8 +16,10 @@ public class Messages {
         return newMessageOne.replace("{1}", String.valueOf(price));
     }
 
-    public String vagtPay() {
-        return message.getMessages().getString("Vagtshop.no-penge");
+    public String vagtshopNoMoney(String type, int price) {
+        String oldMessage = message.getMessages().getString("Vagtshop.no-money");
+        String newMessageOne = oldMessage.replace("{0}", type);
+        return newMessageOne.replace("{1}", String.valueOf(price));
     }
 
     public String vagtshopEnchant() {
@@ -30,9 +32,16 @@ public class Messages {
         return message.getMessages().getString("Vagtpay.payout");
     }
 
-    public String vagtpayPayUprade() {
-        return message.getMessages().getString("Vagtpay.payupgrade");
+    public String repairSignrepaired(String type, int price) {
+        String oldMessage = message.getMessages().getString("repair.repair-text");
+        String newMessageOne = oldMessage.replace("{0}", type);
+        return newMessageOne.replace("{1}", String.valueOf(price));
     }
 
 
+    public String repairSignnotmoney(String type, int price) {
+        String oldMessage = message.getMessages().getString("repair.no-money");
+        String newMessageOne = oldMessage.replace("{0}", type);
+        return newMessageOne.replace("{1}", String.valueOf(price));
+    }
 }

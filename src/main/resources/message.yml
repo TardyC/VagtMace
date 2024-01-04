@@ -1,6 +1,9 @@
 Vagtshop:
   buyed-item: "&eDu har købt {0} for {1}"
-  no-penge: "&eDu har ikke nok penge til dette."
+
+  #Du kan bruge {1} her også samt {0} {1} er prisen {0} er itemet
+  no-money: "&ePrisen på {0} er {1}"
+
   enchant-item: "&eDu har enchantet {0}: {1}"
 
 vagtpay:
@@ -8,16 +11,16 @@ vagtpay:
   payupgrade: "Du har opgradet din vagt løn til {pay}"
 
 vagtsign:
-  heal-sign-chat: "Du er blevet healet"
-  heal-sign-screen: "Du er blevet healet"
+  heal-sign-chat: "&2Du er blevet healet"
+#  heal-sign-screen: "Du er blevet healet"
   buffs: "§3Du har modtaget dine buffs"
-  buffs-screen: "§3Du har modtaget dine buffs"
+#  buffs-screen: "§3Du har modtaget dine buffs"
 
 healsign:
   text:
     1st: "Tryk her"
     2nd: "For at modtage"
-    3nd: "dine buffs"
+    3nd: "heal"
     4nd: "MaceMc"
   signtext: #Her skal du kun skrive den første linje så laver den resten selv.
     text: "Heal"
@@ -59,9 +62,19 @@ vagtwarpsign:
  signtext: #Her skal du kun skrive den første linje så laver den resten selv.
    text: "VagtWarps"
 
+repairsign:
+  text:
+    1st: "Tryk her"
+    2nd: "For at repair"
+    3nd: "Dit item"
+    4nd: ""
+  signtext:
+    text: "Repair"
 
 repair:
-  repair-text: "Du har repaired dit item for (x)"
+  repair-text: "Du har repaired dit item for {1}"
+  damage: "Dette item har ikke taget skade"
+  no-money: "Du har ikke penge nok du skal bruge {1}"
 
 
 vagtlevel:

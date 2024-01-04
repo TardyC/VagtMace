@@ -2,6 +2,7 @@ package dev.crnyy.vagtsystem;
 
 import dev.crnyy.vagtsystem.commands.VagtCommand;
 import dev.crnyy.vagtsystem.files.Message;
+import dev.crnyy.vagtsystem.plugins.signs.HealSign;
 import dev.crnyy.vagtsystem.plugins.vagtbuffs.VagtBuffs;
 import dev.crnyy.vagtsystem.plugins.vagtcoins.VagtCoinsMenu;
 import dev.crnyy.vagtsystem.plugins.vagtgearshop.SignManager;
@@ -28,10 +29,8 @@ import dev.crnyy.vagtsystem.plugins.vagtontime.VagtOntimeCommand;
 import dev.crnyy.vagtsystem.utils.Messages;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class Main extends JavaPlugin {
 
@@ -54,11 +53,11 @@ public class Main extends JavaPlugin {
         this.message = new Message(this);
 
 
-        this.getServer().getPluginManager().registerEvents(new SignManager(), this);
+        this.getServer().getPluginManager().registerEvents(new SignManager(message), this);
         this.getCommand("vagt").setExecutor(new VagtCommand(config));
 
         //VagtGearShop og EnchantShop
-        this.getServer().getPluginManager().registerEvents(new CVagtShopListener(this, new Messages(message)), this);
+        this.getServer().getPluginManager().registerEvents(new CVagtShopListener(this, new Messages(message), config), this);
         this.getServer().getPluginManager().registerEvents(new CVagtEnchantListener(), this);
         this.getServer().getPluginManager().registerEvents(new CVagtEnchantItemsListener(new ArmorManager()), this);
 
@@ -83,9 +82,13 @@ public class Main extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(ontime, this);
 
         //Repair
-        this.getServer().getPluginManager().registerEvents(new Repair(config), this); //Skal lige kigges på om config skal ind under?
+        this.getServer().getPluginManager().registerEvents(new Repair(config, message, new Messages(message)), this); //Skal lige kigges på om config skal ind under?
         //VagtBuffs
         this.getServer().getPluginManager().registerEvents(new VagtBuffs(config, message), this);
+
+        //Signs
+        this.getServer().getPluginManager().registerEvents(new HealSign(config, message), this);
+
         //Files
         loadDataFile();
     }

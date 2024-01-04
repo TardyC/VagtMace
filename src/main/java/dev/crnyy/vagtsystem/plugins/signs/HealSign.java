@@ -1,4 +1,4 @@
-package dev.crnyy.vagtsystem.plugins.signshop;
+package dev.crnyy.vagtsystem.plugins.signs;
 
 import dev.crnyy.vagtsystem.files.Config;
 import dev.crnyy.vagtsystem.files.Message;
