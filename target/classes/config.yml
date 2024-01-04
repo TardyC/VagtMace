@@ -1,7 +1,7 @@
 Worlds:
-  C: world #Skriv din verden for C her
-  B: B #Skriv din verden for B her
-  A: A #Skriv din verden for A her
+  C: "world" #Skriv din verden for C her
+  B: "B" #Skriv din verden for B her
+  A: "A" #Skriv din verden for A her
 
 
 Spassermine:

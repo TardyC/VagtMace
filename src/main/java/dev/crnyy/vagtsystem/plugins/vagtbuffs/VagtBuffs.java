@@ -45,7 +45,9 @@ public class VagtBuffs implements Listener {
         String configWorld = config.getConfig().getString("Worlds.C", "world");
         String bWorld = config.getConfig().getString("Worlds.B");
         String aWorld = config.getConfig().getString("Worlds.A");
+
         Player player = e.getPlayer();
+        String getWorld = player.getWorld().getName();
         Block block = e.getClickedBlock();
         World world = e.getPlayer().getWorld();
         if (block != null && block.getType() == Material.WALL_SIGN) {
@@ -59,9 +61,9 @@ public class VagtBuffs implements Listener {
                                     player.removePotionEffect(PotionEffectType.ABSORPTION);
                                     player.removePotionEffect(PotionEffectType.SPEED);
                                     player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-                                    player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 10000, config.getConfig().getInt("Vagtbuffs.C.Absorption")));
-                                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10000, config.getConfig().getInt("Vagtbuffs.C.Speed")));
-                                    player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10000, config.getConfig().getInt("Vagtbuffs.C.Strength")));
+                                    player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 10000, config.getConfig().getInt("Vagtbuffs.A.Absorption")));
+                                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10000, config.getConfig().getInt("Vagtbuffs.A.Speed")));
+                                    player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10000, config.getConfig().getInt("Vagtbuffs.A.Strength")));
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("vagtsign.buffs")));
                                 } else if (player.getWorld().getName().equalsIgnoreCase(bWorld)) {
                                     player.removePotionEffect(PotionEffectType.ABSORPTION);
@@ -75,9 +77,9 @@ public class VagtBuffs implements Listener {
                                     player.removePotionEffect(PotionEffectType.ABSORPTION);
                                     player.removePotionEffect(PotionEffectType.SPEED);
                                     player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-                                    player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 20000, config.getConfig().getInt("Vagtbuffs.A.Absorption")));
-                                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20000, config.getConfig().getInt("Vagtbuffs.A.Speed")));
-                                    player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20000, config.getConfig().getInt("Vagtbuffs.A.Strength")));
+                                    player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 20000, config.getConfig().getInt("Vagtbuffs.C.Absorption")));
+                                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20000, config.getConfig().getInt("Vagtbuffs.C.Speed")));
+                                    player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20000, config.getConfig().getInt("Vagtbuffs.C.Strength")));
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("vagtsign.buffs")));
                                 }
                             }
