@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VagtSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VagtSystem_jar</output-path>
+    <root id="archive" name="VagtSystem.jar">
+      <element id="module-output" name="VagtSystem" />
+    </root>
+  </artifact>
+</component>

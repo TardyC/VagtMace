@@ -47,6 +47,11 @@ Vagtshop:
     chestplate: 2000
     legs: 2000
     boots: 2000
+    sword: 2000
+    bow: 2000
+    arrow: 1500
+    food: 160
+    stick: 1000
   B: #Pris for B
     helmet: 2000
     chestplate: 2000
@@ -62,16 +67,16 @@ Vagtshop:
 
 Vagtbuffs:
   C:
-    Speed: 1
-    Absorption: 3
+    Speed: 2
+    Absorption: 6
     Strength: 1
   B:
-    Speed: 1
-    Absorption: 3
+    Speed: 2
+    Absorption: 7
     Strength: 1
   A:
-    Speed: 1
-    Absorption: 3
+    Speed: 2
+    Absorption: 10
     Strength: 1
 
 
