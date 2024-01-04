@@ -54,7 +54,7 @@ public class Main extends JavaPlugin {
 
 
         this.getServer().getPluginManager().registerEvents(new SignManager(message), this);
-        this.getCommand("vagt").setExecutor(new VagtCommand(config));
+        this.getCommand("vagt").setExecutor(new VagtCommand(config, message));
 
         //VagtGearShop og EnchantShop
         this.getServer().getPluginManager().registerEvents(new CVagtShopListener(this, new Messages(message), config), this);
@@ -62,7 +62,7 @@ public class Main extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new CVagtEnchantItemsListener(new ArmorManager()), this);
 
         //VagtChat
-        this.getServer().getPluginManager().registerEvents(new VagtChat(), this);
+        this.getServer().getPluginManager().registerEvents(new VagtChat(new Messages(message)), this);
         this.getCommand("vagtchat").setExecutor(new VagtChatCommand());
 
         //VagtLevel

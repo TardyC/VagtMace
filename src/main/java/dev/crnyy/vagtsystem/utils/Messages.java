@@ -44,4 +44,9 @@ public class Messages {
         String newMessageOne = oldMessage.replace("{0}", type);
         return newMessageOne.replace("{1}", String.valueOf(price));
     }
+    public String vagtChat(String type, String chat) {
+        String oldMessage = message.getMessages().getString("vagtchat.chat");
+        String newMessageOne = oldMessage.replace("{0}", type);
+        return newMessageOne.replace("{1}", chat);
+    }
 }

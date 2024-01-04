@@ -25,11 +25,11 @@ public class HealSign implements Listener {
         Player player = e.getPlayer();
         Sign sign = (Sign) e.getBlock().getState();
         String firstLine = e.getLine(0);
-        if (firstLine.equalsIgnoreCase(message.getMessages().getString("healsign.signtext.text"))) {
-            e.setLine(0, message.getMessages().getString("healsign.text.1st"));
-            e.setLine(1, message.getMessages().getString("healsign.text.2nd"));
-            e.setLine(2, message.getMessages().getString("healsign.text.3nd"));
-            e.setLine(3, message.getMessages().getString("healsign.text.4nd"));
+        if (firstLine.equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.signtext.text")))) {
+            e.setLine(0, ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.1st")));
+            e.setLine(1, ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.2nd")));
+            e.setLine(2, ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.3nd")));
+            e.setLine(3, ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.4nd")));
         }
 
 
@@ -41,10 +41,10 @@ public class HealSign implements Listener {
         Block block = e.getClickedBlock();
         if (block != null && block.getType() == Material.WALL_SIGN) {
             Sign sign = (Sign) block.getState();
-            if (sign.getLine(0).equalsIgnoreCase(message.getMessages().getString("healsign.text.1st"))) {
-                if (sign.getLine(1).equalsIgnoreCase(message.getMessages().getString("healsign.text.2nd"))) {
-                    if (sign.getLine(2).equalsIgnoreCase(message.getMessages().getString("healsign.text.3nd"))) {
-                        if (sign.getLine(3).equalsIgnoreCase(message.getMessages().getString("healsign.text.4nd"))) {
+            if (sign.getLine(0).equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.1st")))) {
+                if (sign.getLine(1).equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.2nd")))) {
+                    if (sign.getLine(2).equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.3nd")))) {
+                        if (sign.getLine(3).equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', message.getMessages().getString("healsign.text.4nd")))) {
                             if (player.hasPermission("vagt")) {
                                 player.setFoodLevel(20);
                                 player.setHealth(20);

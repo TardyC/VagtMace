@@ -6,6 +6,9 @@ Vagtshop:
 
   enchant-item: "&eDu har enchantet {0}: {1}"
 
+vagtchat:
+  chat: "&2VagtChat {1}: {0}"
+
 vagtpay:
   payout: "Du har modtaget {pay} i vagt løn"
   payupgrade: "Du har opgradet din vagt løn til {pay}"
