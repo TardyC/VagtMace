@@ -1,7 +1,7 @@
 name: VagtSystem
 main: dev.crnyy.vagtsystem.Main
 version: 1.0.0
-author: crnyy
+author: crnyy, Bowsseeee
 description: MaceMC
 commands:
   vagtchat:
