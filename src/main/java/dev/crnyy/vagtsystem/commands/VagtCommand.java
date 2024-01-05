@@ -10,6 +10,7 @@ import dev.crnyy.vagtsystem.plugins.vagtlevel.VagtLevelQuests;
 import dev.crnyy.vagtsystem.plugins.vagtmenu.VagtMenu;
 import dev.crnyy.vagtsystem.plugins.vagtmine.VagtMine;
 import dev.crnyy.vagtsystem.utils.Messages;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,6 +36,7 @@ public class VagtCommand implements CommandExecutor {
                 if (args[0].equalsIgnoreCase("reload")) {
                     config.reloadConfig();
                     message.reloadConfig();
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lVagt Systemet &7Message.yml og Config.yml er reloaded"));
                 }
             } else if (args.length == 0) {
                 VagtMenu menu = new VagtMenu();
