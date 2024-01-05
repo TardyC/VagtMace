@@ -22,6 +22,7 @@ import dev.crnyy.vagtsystem.plugins.vagtlevel.TestCommand;
 import dev.crnyy.vagtsystem.plugins.vagtlevel.VagtLevel;
 import dev.crnyy.vagtsystem.plugins.vagtlevel.VagtLevelCommand;
 import dev.crnyy.vagtsystem.plugins.vagtlevel.VagtLevelQuests;
+import dev.crnyy.vagtsystem.plugins.vagtmenu.VagtMenuListener;
 import dev.crnyy.vagtsystem.plugins.vagtmine.VagtMine;
 import dev.crnyy.vagtsystem.plugins.vagtmine.VagtMineCommand;
 import dev.crnyy.vagtsystem.plugins.vagtontime.VagtOntime;
@@ -52,9 +53,10 @@ public class Main extends JavaPlugin {
         this.config = new Config(this);
         this.message = new Message(this);
 
-
+        //vagt
         this.getServer().getPluginManager().registerEvents(new SignManager(message), this);
         this.getCommand("vagt").setExecutor(new VagtCommand(config, message));
+        this.getServer().getPluginManager().registerEvents(new VagtMenuListener(), this);
 
         //VagtGearShop og EnchantShop
         this.getServer().getPluginManager().registerEvents(new CVagtShopListener(this, new Messages(message), config), this);

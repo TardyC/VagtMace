@@ -4,6 +4,7 @@ import dev.crnyy.vagtsystem.files.Config;
 import dev.crnyy.vagtsystem.files.Message;
 import dev.crnyy.vagtsystem.plugins.PlayerManager;
 import dev.crnyy.vagtsystem.plugins.vagtcoins.VagtCoins;
+import dev.crnyy.vagtsystem.plugins.vagtgearshop.CVagtShopMenu;
 import dev.crnyy.vagtsystem.plugins.vagtlevel.VagtLevelMenu;
 import dev.crnyy.vagtsystem.plugins.vagtlevel.VagtLevelQuests;
 import dev.crnyy.vagtsystem.plugins.vagtmenu.VagtMenu;
@@ -36,8 +37,8 @@ public class VagtCommand implements CommandExecutor {
                     message.reloadConfig();
                 }
             } else if (args.length == 0) {
-                //VagtMenu menu = new VagtMenu(new PlayerManager());
-                //menu.openInventory(player); Menuen skal åbne her altså Vagtmenu classes menuen default menu
+                VagtMenu menu = new VagtMenu();
+                menu.openInventory(player);
             }
         }
         return false;
