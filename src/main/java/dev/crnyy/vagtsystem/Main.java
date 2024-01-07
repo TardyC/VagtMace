@@ -61,7 +61,7 @@ public class Main extends JavaPlugin {
         //VagtGearShop og EnchantShop
         this.getServer().getPluginManager().registerEvents(new CVagtShopListener(this, new Messages(message), config), this);
         this.getServer().getPluginManager().registerEvents(new CVagtEnchantListener(), this);
-        this.getServer().getPluginManager().registerEvents(new CVagtEnchantItemsListener(new ArmorManager()), this);
+        this.getServer().getPluginManager().registerEvents(new CVagtEnchantItemsListener(new ArmorManager(), config, message), this);
 
         //VagtChat
         this.getServer().getPluginManager().registerEvents(new VagtChat(new Messages(message)), this);

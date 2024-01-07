@@ -1,6 +1,8 @@
 package dev.crnyy.vagtsystem.plugins.vagtgearshop.vagtenchant;
 
 import dev.crnyy.vagtsystem.Main;
+import dev.crnyy.vagtsystem.files.Config;
+import dev.crnyy.vagtsystem.files.Message;
 import dev.crnyy.vagtsystem.plugins.ArmorManager;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Material;
@@ -20,11 +22,16 @@ import java.util.UUID;
 public class CVagtEnchantItemsListener implements Listener {
 
     private final ArmorManager armorManager;
-    public  CVagtEnchantItemsListener(ArmorManager armorManager) {
+    private final Config config;
+    private final Message message;
+    public  CVagtEnchantItemsListener(ArmorManager armorManager, Config config, Message message) {
         this.armorManager = armorManager;
+        this.config = config;
+        this.message = message;
     }
 
     private Economy economy = Main.economy;
+
 
     /**
      * Skal fixes, lore kan kun ændres 1 gang, hashmap fix!
@@ -166,13 +173,13 @@ public class CVagtEnchantItemsListener implements Listener {
     private int calculateEnchantCost(int protectionLevel) {
         switch (protectionLevel) {
             case 1:
-                return 2000;
+                return config.getConfig().getInt("VagtEnchant.C.protection-1");
             case 2:
-                return 3000;
+                return config.getConfig().getInt("VagtEnchant.C.protection-2");
             case 3:
-                return 4000;
+                return config.getConfig().getInt("VagtEnchant.C.protection-3");
             case 4:
-                return 5000;
+                return config.getConfig().getInt("VagtEnchant.C.protection-4");
         }
         return protectionLevel;
     }

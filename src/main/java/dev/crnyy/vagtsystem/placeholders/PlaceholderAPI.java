@@ -26,7 +26,7 @@ public class PlaceholderAPI extends PlaceholderExpansion {
 
     @Override
     public String getAuthor(){
-        return "crnyy";
+        return "crnyy, Bowsseeee";
     }
 
     @Override
