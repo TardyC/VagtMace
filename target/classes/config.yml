@@ -29,6 +29,11 @@ VagtEnchant:
     protection-2: 3000
     protection-3: 4500
     protection-4: 6000
+    sharpness-1: 1500
+    sharpness-2: 1500
+    sharpness-3: 1500
+    sharpness-4: 1500
+
   B: #Prisen for B
     protection-1: 3000
     protection-2: 4500

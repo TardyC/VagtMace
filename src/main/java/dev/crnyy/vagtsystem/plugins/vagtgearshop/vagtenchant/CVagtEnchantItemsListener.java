@@ -3,6 +3,7 @@ package dev.crnyy.vagtsystem.plugins.vagtgearshop.vagtenchant;
 import dev.crnyy.vagtsystem.Main;
 import dev.crnyy.vagtsystem.files.Config;
 import dev.crnyy.vagtsystem.plugins.ArmorManager;
+import dev.crnyy.vagtsystem.utils.Messages;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Material;
 import org.bukkit.Utility;
@@ -23,14 +24,16 @@ import java.util.Map;
 import java.util.UUID;
 
 public class CVagtEnchantItemsListener implements Listener {
-
     private final ArmorManager armorManager;
     private final CVagtEnchantItems menus;
     private final Config config;
-    public  CVagtEnchantItemsListener(ArmorManager armorManager, Config config, CVagtEnchantItems menus) {
+    private final Messages messages;
+    public  CVagtEnchantItemsListener(ArmorManager armorManager, Config config, Messages messages, CVagtEnchantItems menus) {
         this.armorManager = armorManager;
         this.config = config;
         this.menus = menus;
+        this.messages = messages;
+
     }
 
     private Map<UUID, Integer> helmetEnchant = new HashMap<UUID, Integer>();
@@ -41,6 +44,7 @@ public class CVagtEnchantItemsListener implements Listener {
     private Map<UUID, Integer> bowEnchant = new HashMap<UUID, Integer>();
 
     private Economy economy = Main.economy;
+
 
     /**
      * @param e
@@ -309,7 +313,7 @@ public class CVagtEnchantItemsListener implements Listener {
                             if (!swordEnchant.containsKey(player.getUniqueId())) {
                                 swordEnchant.put(player.getUniqueId(), 0);
                             }
-                            int protection = swordEnchant.get(player.getUniqueId());
+                            int sharpness = swordEnchant.get(player.getUniqueId());
                             int protectionLevel = sword.getItemMeta().getEnchantLevel(Enchantment.PROTECTION_ENVIRONMENTAL);
                             if (protectionLevel == 4) {
                                 player.sendMessage("Du har allerede maks sharpness!");
@@ -317,17 +321,17 @@ public class CVagtEnchantItemsListener implements Listener {
                                 swordEnchant.remove(player.getUniqueId());
                                 return;
                             }
-                            if (protection < 4) {
-                                int cost = calculateEnchantCost(protection);
+                            if (sharpness < 4) {
+                                int cost = calculateEnchantCost(sharpness);
                                 if (balance >= cost) {
-                                    protection++;
-                                    currentLore.set(3, "§8- §7Sharpness§8: §f" + protection);
+                                    sharpness++;
+                                    currentLore.set(3, "§8- §7Sharpness§8: §f" + sharpness);
                                     itemMeta.setLore(currentLore);
                                     sword.setItemMeta(itemMeta);
-                                    player.sendMessage("Du købte sharpness " + protection);
+                                    player.sendMessage("Du købte sharpness " + sharpness);
                                     economy.withdrawPlayer(player, cost);
-                                    swordEnchant.put(player.getUniqueId(), protection);
-                                    sword.addEnchantment(Enchantment.DAMAGE_ALL, protection);
+                                    swordEnchant.put(player.getUniqueId(), sharpness);
+                                    sword.addEnchantment(Enchantment.DAMAGE_ALL, sharpness);
                                     player.updateInventory();
                                     menus.openInventory("sword", player);
                                 } else {
@@ -407,6 +411,20 @@ public class CVagtEnchantItemsListener implements Listener {
                 return config.getConfig().getInt("VagtEnchant.C.protection-4");
         }
         return protectionLevel;
+    }
+    @Utility
+    private int calculateSharpnessCost(int sharpnessLevel) {
+        switch (sharpnessLevel) {
+            case 1:
+                return config.getConfig().getInt("VagtEnchant.C.sharpness-1");
+            case 2:
+                return config.getConfig().getInt("VagtEnchant.C.sharpness-2");
+            case 3:
+                return config.getConfig().getInt("VagtEnchant.C.sharpness-3");
+            case 4:
+                return config.getConfig().getInt("VagtEnchant.C.sharpness-4");
+        }
+        return sharpnessLevel;
     }
 
     @Utility

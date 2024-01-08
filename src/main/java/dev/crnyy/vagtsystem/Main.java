@@ -15,6 +15,7 @@ import dev.crnyy.vagtsystem.plugins.repair.Repair;
 import dev.crnyy.vagtsystem.plugins.vagtchat.VagtChat;
 import dev.crnyy.vagtsystem.plugins.vagtchat.VagtChatCommand;
 import dev.crnyy.vagtsystem.plugins.vagtcoins.VagtCoinsCommand;
+import dev.crnyy.vagtsystem.plugins.vagtgearshop.vagtenchant.CVagtEnchantItems;
 import dev.crnyy.vagtsystem.plugins.vagtgearshop.vagtenchant.CVagtEnchantItemsListener;
 import dev.crnyy.vagtsystem.plugins.vagtgearshop.vagtenchant.CVagtEnchantListener;
 import dev.crnyy.vagtsystem.plugins.vagtgearshop.CVagtShopListener;
@@ -27,6 +28,8 @@ import dev.crnyy.vagtsystem.plugins.vagtmine.VagtMine;
 import dev.crnyy.vagtsystem.plugins.vagtmine.VagtMineCommand;
 import dev.crnyy.vagtsystem.plugins.vagtontime.VagtOntime;
 import dev.crnyy.vagtsystem.plugins.vagtontime.VagtOntimeCommand;
+import dev.crnyy.vagtsystem.plugins.vagtwarps.SignManagerWarp;
+import dev.crnyy.vagtsystem.plugins.vagtwarps.VagtWarpMenuListener;
 import dev.crnyy.vagtsystem.utils.Messages;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -38,6 +41,7 @@ public class Main extends JavaPlugin {
     public static Economy economy;
     private Config config;
     private Message message;
+    private Messages messages;
 
     @Override
     public void onEnable() {
@@ -61,7 +65,7 @@ public class Main extends JavaPlugin {
         //VagtGearShop og EnchantShop
         this.getServer().getPluginManager().registerEvents(new CVagtShopListener(this, new Messages(message), config), this);
         this.getServer().getPluginManager().registerEvents(new CVagtEnchantListener(), this);
-        this.getServer().getPluginManager().registerEvents(new CVagtEnchantItemsListener(new ArmorManager(), config, message), this);
+        this.getServer().getPluginManager().registerEvents(new CVagtEnchantItemsListener(new ArmorManager(), config, messages, new CVagtEnchantItems()), this);
 
         //VagtChat
         this.getServer().getPluginManager().registerEvents(new VagtChat(new Messages(message)), this);
@@ -90,6 +94,10 @@ public class Main extends JavaPlugin {
 
         //Signs
         this.getServer().getPluginManager().registerEvents(new HealSign(config, message), this);
+
+        //Vagt Warps
+        this.getServer().getPluginManager().registerEvents(new VagtWarpMenuListener(),this);
+        this.getServer().getPluginManager().registerEvents(new SignManagerWarp(message), this);
 
         //Files
         loadDataFile();

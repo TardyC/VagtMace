@@ -1,6 +1,7 @@
 package dev.crnyy.vagtsystem.plugins.vagtmenu;
 
 import dev.crnyy.vagtsystem.plugins.ArmorManager;
+import dev.crnyy.vagtsystem.plugins.vagtwarps.StartVagtMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -36,11 +37,16 @@ public class VagtMenuListener implements Listener {
                 e.setCancelled(true);
             }
         }
-        if (e.getClickedInventory().getName().equals("Vagt Shop")) {
+        if (e.getClickedInventory().getName().equals("§6§lVAGT §f§lMENU§7 - Hovedemenu")) {
             if (e.getCursor().getType() != Material.AIR) {
                 e.setCancelled(true);
             }
             if (e.getCurrentItem().getType() != Material.AIR) {
+                e.setCancelled(true);
+            }
+            if (e.getSlot() == 22) {
+                StartVagtMenu menu = new StartVagtMenu();
+                menu.openInventory(player);
                 e.setCancelled(true);
             }
         }
