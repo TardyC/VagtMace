@@ -38,7 +38,7 @@ public class AVagtWarpMenu {
                 "§8§m-------------------------",
                 "",
                 "§7Klik her for at warpe til",
-                "§fCVagtWarp §7#5",
+                "§fAVagtWarp §7#5",
                 "",
                 "§8§m-------------------------"));
 
@@ -47,7 +47,7 @@ public class AVagtWarpMenu {
                 "§8§m-------------------------",
                 "",
                 "§7Klik her for at warpe til",
-                "§fCVagtWarp §7#4",
+                "§fAVagtWarp §7#4",
                 "",
                 "§8§m-------------------------"));
 
@@ -57,7 +57,7 @@ public class AVagtWarpMenu {
                 "§8§m-------------------------",
                 "",
                 "§7Klik her for at warpe til",
-                "§fCVagtWarp §7#3",
+                "§fAVagtWarp §7#3",
                 "",
                 "§8§m-------------------------"));
 
@@ -66,7 +66,7 @@ public class AVagtWarpMenu {
                 "§8§m-------------------------",
                 "",
                 "§7Klik her for at warpe til",
-                "§fCVagtWarp §7#2",
+                "§fAVagtWarp §7#2",
                 "",
                 "§8§m-------------------------"));
 
@@ -75,7 +75,7 @@ public class AVagtWarpMenu {
                 "§8§m-------------------------",
                 "",
                 "§7Klik her for at warpe til",
-                "§fCVagtWarp §7#1",
+                "§fAVagtWarp §7#1",
                 "",
                 "§8§m-------------------------"));
 
